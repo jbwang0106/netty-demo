@@ -1,9 +1,11 @@
 package com.netty.demo.wechat.demo.client;
 
+import com.netty.demo.wechat.demo.client.handler.ClientHandler;
 import com.netty.demo.wechat.demo.client.handler.LoginRequestHandler;
 import com.netty.demo.wechat.demo.client.handler.MessageRequestHandler;
 import com.netty.demo.wechat.demo.codec.PacketDecoder;
 import com.netty.demo.wechat.demo.codec.PacketEncoder;
+import com.netty.demo.wechat.demo.codec.Spliter;
 import com.netty.demo.wechat.demo.procotol.request.MessageRequestPacket;
 import com.netty.demo.wechat.demo.util.LoginUtil;
 import io.netty.bootstrap.Bootstrap;
@@ -13,6 +15,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.util.AttributeKey;
 
 import java.util.Date;
@@ -41,10 +44,13 @@ public class NettyClient {
                 .handler(new ChannelInitializer<Channel>() {
                     @Override
                     protected void initChannel(Channel ch) throws Exception {
+//                        ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 7, 4));
+                        ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginRequestHandler());
                         ch.pipeline().addLast(new MessageRequestHandler());
                         ch.pipeline().addLast(new PacketEncoder());
+//                        ch.pipeline().addLast(new ClientHandler());
                     }
                 });
 

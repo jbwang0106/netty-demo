@@ -2,14 +2,17 @@ package com.netty.demo.wechat.demo.server;
 
 import com.netty.demo.wechat.demo.codec.PacketDecoder;
 import com.netty.demo.wechat.demo.codec.PacketEncoder;
+import com.netty.demo.wechat.demo.codec.Spliter;
 import com.netty.demo.wechat.demo.server.handler.LoginResponseHandler;
 import com.netty.demo.wechat.demo.server.handler.MessageResponseHhandler;
+import com.netty.demo.wechat.demo.server.handler.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.util.AttributeKey;
 
 public class NettyServer {
@@ -35,10 +38,13 @@ public class NettyServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) {
+//                        ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 7, 4));
+                        ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHhandler());
                         ch.pipeline().addLast(new PacketEncoder());
+//                        ch.pipeline().addLast(new ServerHandler());
                     }
                 })
                 .attr(AttributeKey.newInstance("serverName"), "nettyServer")
