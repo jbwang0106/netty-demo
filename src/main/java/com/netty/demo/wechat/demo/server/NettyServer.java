@@ -3,6 +3,7 @@ package com.netty.demo.wechat.demo.server;
 import com.netty.demo.wechat.demo.codec.PacketDecoder;
 import com.netty.demo.wechat.demo.codec.PacketEncoder;
 import com.netty.demo.wechat.demo.codec.Spliter;
+import com.netty.demo.wechat.demo.server.handler.LifeCyCleTestHandler;
 import com.netty.demo.wechat.demo.server.handler.LoginResponseHandler;
 import com.netty.demo.wechat.demo.server.handler.MessageResponseHhandler;
 import com.netty.demo.wechat.demo.server.handler.ServerHandler;
@@ -39,6 +40,7 @@ public class NettyServer {
                     @Override
                     protected void initChannel(NioSocketChannel ch) {
 //                        ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 7, 4));
+                        ch.pipeline().addLast(new LifeCyCleTestHandler());
                         ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
