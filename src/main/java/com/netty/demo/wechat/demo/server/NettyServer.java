@@ -1,12 +1,9 @@
 package com.netty.demo.wechat.demo.server;
 
-import com.netty.demo.wechat.demo.server.handler.ServerHandler;
-import com.netty.demo.wechat.demo.server.handler.inbound.InBoundHandlerA;
-import com.netty.demo.wechat.demo.server.handler.inbound.InBoundHandlerB;
-import com.netty.demo.wechat.demo.server.handler.inbound.InBoundHandlerC;
-import com.netty.demo.wechat.demo.server.handler.outbound.OutBoundHandlerA;
-import com.netty.demo.wechat.demo.server.handler.outbound.OutBoundHandlerB;
-import com.netty.demo.wechat.demo.server.handler.outbound.OutBoundHandlerC;
+import com.netty.demo.wechat.demo.codec.PacketDecoder;
+import com.netty.demo.wechat.demo.codec.PacketEncoder;
+import com.netty.demo.wechat.demo.server.handler.LoginResponseHandler;
+import com.netty.demo.wechat.demo.server.handler.MessageResponseHhandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -38,15 +35,10 @@ public class NettyServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) {
-                        // ch.pipeline().addLast(new ServerHandler());
-
-                        ch.pipeline().addLast(new InBoundHandlerA());
-                        ch.pipeline().addLast(new InBoundHandlerB());
-                        ch.pipeline().addLast(new InBoundHandlerC());
-
-                        ch.pipeline().addLast(new OutBoundHandlerA());
-                        ch.pipeline().addLast(new OutBoundHandlerB());
-                        ch.pipeline().addLast(new OutBoundHandlerC());
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new MessageResponseHhandler());
+                        ch.pipeline().addLast(new PacketEncoder());
                     }
                 })
                 .attr(AttributeKey.newInstance("serverName"), "nettyServer")

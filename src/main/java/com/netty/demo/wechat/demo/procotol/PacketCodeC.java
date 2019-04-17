@@ -33,10 +33,7 @@ public class PacketCodeC {
         serializeMap.put(Serializer.JSON_SERIALIZER, Serializer.DEFAULT);
     }
 
-    public ByteBuf encode(ByteBufAllocator byteBufAllocator, Packet packet) {
-
-        // 创建buffer对象
-        ByteBuf byteBuf = byteBufAllocator.ioBuffer();
+    public ByteBuf encode(ByteBuf byteBuf, Packet packet) {
 
         // 序列化java对象
         byte[] bytes = Serializer.DEFAULT.serialize(packet);

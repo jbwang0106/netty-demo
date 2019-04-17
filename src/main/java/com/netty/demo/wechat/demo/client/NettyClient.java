@@ -1,12 +1,12 @@
 package com.netty.demo.wechat.demo.client;
 
-import com.netty.demo.wechat.demo.client.handler.ClientHandler;
-import com.netty.demo.wechat.demo.client.handler.FirstClientHandler;
-import com.netty.demo.wechat.demo.procotol.PacketCodeC;
+import com.netty.demo.wechat.demo.client.handler.LoginRequestHandler;
+import com.netty.demo.wechat.demo.client.handler.MessageRequestHandler;
+import com.netty.demo.wechat.demo.codec.PacketDecoder;
+import com.netty.demo.wechat.demo.codec.PacketEncoder;
 import com.netty.demo.wechat.demo.procotol.request.MessageRequestPacket;
 import com.netty.demo.wechat.demo.util.LoginUtil;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -41,7 +41,10 @@ public class NettyClient {
                 .handler(new ChannelInitializer<Channel>() {
                     @Override
                     protected void initChannel(Channel ch) throws Exception {
-                        ch.pipeline().addLast(new ClientHandler());
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginRequestHandler());
+                        ch.pipeline().addLast(new MessageRequestHandler());
+                        ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
 
@@ -81,8 +84,7 @@ public class NettyClient {
                     MessageRequestPacket packet = new MessageRequestPacket();
                     packet.setMessage(message);
 
-                    ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc(), packet);
-                    channel.writeAndFlush(byteBuf);
+                    channel.writeAndFlush(packet);
                 }
             }
         }).start();
