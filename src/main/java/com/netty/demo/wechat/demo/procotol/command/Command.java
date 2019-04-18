@@ -81,4 +81,14 @@ public interface Command {
      * 群发消息响应指令
      */
     Byte GROUP_MESSGAE_RESPONSE = 16;
+
+    /**
+     * 心跳检测请求指令
+     */
+    Byte HEART_BEAT_REQUEST = 17;
+
+    /**
+     * 心跳检测响应指令
+     */
+    Byte HEART_BEAT_RESPONSE = 18;
 }

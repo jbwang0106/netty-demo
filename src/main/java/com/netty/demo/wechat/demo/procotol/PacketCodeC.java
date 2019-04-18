@@ -38,6 +38,8 @@ public class PacketCodeC {
         packetTypeMap.put(Command.LIST_GROUP_RESPONSE, ListGroupResponsePacket.class);
         packetTypeMap.put(Command.GROUP_MESSAGE_REQUEST, GroupMessageRequestPacket.class);
         packetTypeMap.put(Command.GROUP_MESSGAE_RESPONSE, GroupMessageResponsePacket.class);
+        packetTypeMap.put(Command.HEART_BEAT_REQUEST, HeartBeatRequestPacket.class);
+        packetTypeMap.put(Command.HEART_BEAT_RESPONSE, HeartBeatResponsePacket.class);
 
         serializeMap = new HashMap<>();
         serializeMap.put(Serializer.JSON_SERIALIZER, Serializer.DEFAULT);

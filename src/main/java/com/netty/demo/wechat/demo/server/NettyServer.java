@@ -36,13 +36,15 @@ public class NettyServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) {
+                        // 空闲检测
+                        ch.pipeline().addLast(new IMIdleStateHandler());
                         ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(PacketCodecHandler.INSTANCE);
-                        //ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(LoginRequestHandler.INSTANCE);
+                        ch.pipeline().addLast(HeartBeatRequestHandler.INSTANCE);
                         ch.pipeline().addLast(AuthHandler.INSTANCE);
                         ch.pipeline().addLast(IMHandler.INSTANCE);
-                        //ch.pipeline().addLast(new PacketEncoder());
+
                     }
                 })
                 .attr(AttributeKey.newInstance("serverName"), "nettyServer")

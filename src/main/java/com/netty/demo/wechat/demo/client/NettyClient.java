@@ -9,6 +9,7 @@ import com.netty.demo.wechat.demo.codec.PacketEncoder;
 import com.netty.demo.wechat.demo.codec.Spliter;
 import com.netty.demo.wechat.demo.procotol.request.LoginRequestPacket;
 import com.netty.demo.wechat.demo.procotol.request.MessageRequestPacket;
+import com.netty.demo.wechat.demo.server.handler.IMIdleStateHandler;
 import com.netty.demo.wechat.demo.util.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -45,6 +46,7 @@ public class NettyClient {
                 .handler(new ChannelInitializer<Channel>() {
                     @Override
                     protected void initChannel(Channel ch) throws Exception {
+                        ch.pipeline().addLast(new IMIdleStateHandler());
                         ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
@@ -56,6 +58,8 @@ public class NettyClient {
                         ch.pipeline().addLast(new GroupMessageResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
+
+                        ch.pipeline().addLast(new HeartBeatTimerHandler());
                     }
                 });
 
