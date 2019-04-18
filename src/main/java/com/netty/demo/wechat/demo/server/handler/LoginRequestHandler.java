@@ -5,13 +5,18 @@ import com.netty.demo.wechat.demo.procotol.response.LoginResponsePacket;
 import com.netty.demo.wechat.demo.session.Session;
 import com.netty.demo.wechat.demo.util.IDUtil;
 import com.netty.demo.wechat.demo.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 import java.util.Date;
-import java.util.UUID;
 
+@ChannelHandler.Sharable
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPacket> {
+
+    public static final LoginRequestHandler INSTANCE = new LoginRequestHandler();
+
+    private LoginRequestHandler() {}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPacket loginRequestPacket) throws Exception {

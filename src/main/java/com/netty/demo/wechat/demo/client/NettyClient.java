@@ -3,6 +3,7 @@ package com.netty.demo.wechat.demo.client;
 import com.netty.demo.wechat.demo.client.console.ConsoleCommandManager;
 import com.netty.demo.wechat.demo.client.console.LoginCosoleCommand;
 import com.netty.demo.wechat.demo.client.handler.*;
+import com.netty.demo.wechat.demo.codec.PacketCodecHandler;
 import com.netty.demo.wechat.demo.codec.PacketDecoder;
 import com.netty.demo.wechat.demo.codec.PacketEncoder;
 import com.netty.demo.wechat.demo.codec.Spliter;
@@ -52,6 +53,7 @@ public class NettyClient {
                         ch.pipeline().addLast(new JoinGroupResponseHandler());
                         ch.pipeline().addLast(new QuitGroupResponseHandler());
                         ch.pipeline().addLast(new ListGroupResponseHandler());
+                        ch.pipeline().addLast(new GroupMessageResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }
