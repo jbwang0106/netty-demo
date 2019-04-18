@@ -1,22 +1,21 @@
 package com.netty.demo.wechat.demo.procotol.response;
 
 import com.netty.demo.wechat.demo.procotol.Packet;
-import com.netty.demo.wechat.demo.procotol.command.Command;
 import lombok.Data;
 
+import static com.netty.demo.wechat.demo.procotol.command.Command.LOGOUT_RESPONSE;
+
+
 @Data
-public class LoginResponsePacket extends Packet {
-
-    private String UserId;
-
-    private String userName;
+public class LogoutResponsePacket extends Packet {
 
     private boolean success;
 
     private String reason;
 
+
     @Override
     public Byte getCommand() {
-        return Command.LOGIN_RESPONSE;
+        return LOGOUT_RESPONSE;
     }
 }

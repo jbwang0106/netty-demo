@@ -1,10 +1,8 @@
 package com.netty.demo.wechat.demo.procotol;
 
 import com.netty.demo.wechat.demo.procotol.command.Command;
-import com.netty.demo.wechat.demo.procotol.request.LoginRequestPacket;
-import com.netty.demo.wechat.demo.procotol.request.MessageRequestPacket;
-import com.netty.demo.wechat.demo.procotol.response.LoginResponsePacket;
-import com.netty.demo.wechat.demo.procotol.response.MessageResponsePacket;
+import com.netty.demo.wechat.demo.procotol.request.*;
+import com.netty.demo.wechat.demo.procotol.response.*;
 import com.netty.demo.wechat.demo.procotol.serializer.Serializer;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
@@ -14,7 +12,7 @@ import java.util.Map;
 
 public class PacketCodeC {
 
-    private static final int MAGIC_NUMBER = 0x12345678;
+    public static final int MAGIC_NUMBER = 0x12345678;
     public static final PacketCodeC INSTANCE = new PacketCodeC();
 
     private static final Map<Byte, Class<? extends Packet>> packetTypeMap;
@@ -28,15 +26,24 @@ public class PacketCodeC {
         packetTypeMap.put(Command.LOGIN_RESPONSE, LoginResponsePacket.class);
         packetTypeMap.put(Command.MESSAGE_REQUEST, MessageRequestPacket.class);
         packetTypeMap.put(Command.MESSAGE_RESPONSE, MessageResponsePacket.class);
+        packetTypeMap.put(Command.CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
+        packetTypeMap.put(Command.CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
+        packetTypeMap.put(Command.LOGOUT_REQUEST, LogoutRequestPacket.class);
+        packetTypeMap.put(Command.LOGOUT_RESPONSE, LogoutResponsePacket.class);
+        packetTypeMap.put(Command.JOIN_GROUP_REQUEST, JoinGroupRequestPacket.class);
+        packetTypeMap.put(Command.JOIN_GROUP_RESPONSE, JoinGroupResponsePacket.class);
+        packetTypeMap.put(Command.QUIT_GROUP_REQUEST, QuitGroupRequestPacket.class);
+        packetTypeMap.put(Command.QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
+        packetTypeMap.put(Command.LIST_GROUP_REQUEST, ListGroupRequestPacket.class);
+        packetTypeMap.put(Command.LIST_GROUP_RESPONSE, ListGroupResponsePacket.class);
+        packetTypeMap.put(Command.GROUP_MESSAGE_REQUEST, GroupMessageRequestPacket.class);
+        packetTypeMap.put(Command.GROUP_MESSGAE_RESPONSE, GroupMessageResponsePacket.class);
 
         serializeMap = new HashMap<>();
         serializeMap.put(Serializer.JSON_SERIALIZER, Serializer.DEFAULT);
     }
 
-    public ByteBuf encode(ByteBufAllocator byteBufAllocator, Packet packet) {
-
-        // 创建buffer对象
-        ByteBuf byteBuf = byteBufAllocator.ioBuffer();
+    public ByteBuf encode(ByteBuf byteBuf, Packet packet) {
 
         // 序列化java对象
         byte[] bytes = Serializer.DEFAULT.serialize(packet);

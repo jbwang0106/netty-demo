@@ -2,19 +2,24 @@ package com.netty.demo.wechat.demo.procotol.response;
 
 import com.netty.demo.wechat.demo.procotol.Packet;
 import com.netty.demo.wechat.demo.procotol.command.Command;
+import com.netty.demo.wechat.demo.session.Session;
 import lombok.Data;
 
 @Data
-public class MessageResponsePacket extends Packet {
+public class GroupMessageResponsePacket extends Packet {
 
-    private String fromUserId;
+    private boolean success;
 
-    private String fromUserName;
+    private String reason;
+
+    private String groupId;
 
     private String message;
 
+    private Session fromUser;
+
     @Override
     public Byte getCommand() {
-        return Command.MESSAGE_RESPONSE;
+        return Command.GROUP_MESSGAE_RESPONSE;
     }
 }

@@ -1,12 +1,16 @@
 package com.netty.demo.wechat.demo.client;
 
-import com.netty.demo.wechat.demo.client.handler.ClientHandler;
-import com.netty.demo.wechat.demo.client.handler.FirstClientHandler;
-import com.netty.demo.wechat.demo.procotol.PacketCodeC;
+import com.netty.demo.wechat.demo.client.console.ConsoleCommandManager;
+import com.netty.demo.wechat.demo.client.console.LoginCosoleCommand;
+import com.netty.demo.wechat.demo.client.handler.*;
+import com.netty.demo.wechat.demo.codec.PacketCodecHandler;
+import com.netty.demo.wechat.demo.codec.PacketDecoder;
+import com.netty.demo.wechat.demo.codec.PacketEncoder;
+import com.netty.demo.wechat.demo.codec.Spliter;
+import com.netty.demo.wechat.demo.procotol.request.LoginRequestPacket;
 import com.netty.demo.wechat.demo.procotol.request.MessageRequestPacket;
-import com.netty.demo.wechat.demo.util.LoginUtil;
+import com.netty.demo.wechat.demo.util.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -41,7 +45,17 @@ public class NettyClient {
                 .handler(new ChannelInitializer<Channel>() {
                     @Override
                     protected void initChannel(Channel ch) throws Exception {
-                        ch.pipeline().addLast(new ClientHandler());
+                        ch.pipeline().addLast(new Spliter());
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new LogoutResponseHandler());
+                        ch.pipeline().addLast(new CreateGroupResponseHandler());
+                        ch.pipeline().addLast(new JoinGroupResponseHandler());
+                        ch.pipeline().addLast(new QuitGroupResponseHandler());
+                        ch.pipeline().addLast(new ListGroupResponseHandler());
+                        ch.pipeline().addLast(new GroupMessageResponseHandler());
+                        ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
 
@@ -70,19 +84,17 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
+
+        Scanner scanner = new Scanner(System.in);
+        ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
+        LoginCosoleCommand loginCosoleCommand = new LoginCosoleCommand();
+
         new Thread(() -> {
             while (!Thread.interrupted()) {
-                if (LoginUtil.hasLogin(channel)) {
-                    System.out.println("输入消息发送至服务端： ");
-                    Scanner scanner = new Scanner(System.in);
-
-                    String message = scanner.nextLine();
-
-                    MessageRequestPacket packet = new MessageRequestPacket();
-                    packet.setMessage(message);
-
-                    ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc(), packet);
-                    channel.writeAndFlush(byteBuf);
+                if (!SessionUtil.hasLogin(channel)) {
+                    loginCosoleCommand.exec(scanner, channel);
+                } else {
+                    consoleCommandManager.exec(scanner, channel);
                 }
             }
         }).start();

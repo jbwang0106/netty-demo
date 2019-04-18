@@ -7,14 +7,14 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class MessageRequestPacket extends Packet {
+public class GroupMessageRequestPacket extends Packet {
 
-    private String toUserId;
+    private String groupId;
 
     private String message;
 
     @Override
     public Byte getCommand() {
-        return Command.MESSAGE_REQUEST;
+        return Command.GROUP_MESSAGE_REQUEST;
     }
 }

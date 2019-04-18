@@ -2,19 +2,17 @@ package com.netty.demo.wechat.demo.procotol.request;
 
 import com.netty.demo.wechat.demo.procotol.Packet;
 import com.netty.demo.wechat.demo.procotol.command.Command;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-@AllArgsConstructor
-public class MessageRequestPacket extends Packet {
+public class CreateGroupRequestPacket extends Packet {
 
-    private String toUserId;
-
-    private String message;
+    private List<String> userIdList;
 
     @Override
     public Byte getCommand() {
-        return Command.MESSAGE_REQUEST;
+        return Command.CREATE_GROUP_REQUEST;
     }
 }

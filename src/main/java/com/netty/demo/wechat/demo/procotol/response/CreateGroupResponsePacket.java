@@ -4,17 +4,21 @@ import com.netty.demo.wechat.demo.procotol.Packet;
 import com.netty.demo.wechat.demo.procotol.command.Command;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-public class MessageResponsePacket extends Packet {
+public class CreateGroupResponsePacket extends Packet {
 
-    private String fromUserId;
+    private List<String> userNameList;
 
-    private String fromUserName;
+    private String groupId;
 
-    private String message;
+    private boolean success;
+
+    private String reason;
 
     @Override
     public Byte getCommand() {
-        return Command.MESSAGE_RESPONSE;
+        return Command.CREATE_GROUP_RESPONSE;
     }
 }

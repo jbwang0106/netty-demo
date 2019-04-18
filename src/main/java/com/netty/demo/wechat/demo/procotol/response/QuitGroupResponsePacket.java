@@ -5,16 +5,16 @@ import com.netty.demo.wechat.demo.procotol.command.Command;
 import lombok.Data;
 
 @Data
-public class MessageResponsePacket extends Packet {
+public class QuitGroupResponsePacket extends Packet {
 
-    private String fromUserId;
+    private boolean success;
 
-    private String fromUserName;
+    private String reason;
 
-    private String message;
+    private String groupId;
 
     @Override
     public Byte getCommand() {
-        return Command.MESSAGE_RESPONSE;
+        return Command.QUIT_GROUP_RESPONSE;
     }
 }
