@@ -71,4 +71,14 @@ public interface Command {
      * 群组列表响应指令
      */
     Byte LIST_GROUP_RESPONSE = 14;
+
+    /**
+     * 群发消息请求指令
+     */
+    Byte GROUP_MESSAGE_REQUEST = 15;
+
+    /**
+     * 群发消息响应指令
+     */
+    Byte GROUP_MESSGAE_RESPONSE = 16;
 }

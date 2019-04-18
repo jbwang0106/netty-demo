@@ -3,11 +3,17 @@ package com.netty.demo.wechat.demo.server.handler;
 import com.netty.demo.wechat.demo.procotol.request.JoinGroupRequestPacket;
 import com.netty.demo.wechat.demo.procotol.response.JoinGroupResponsePacket;
 import com.netty.demo.wechat.demo.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
 
+@ChannelHandler.Sharable
 public class JoinGroupRequestHandler extends SimpleChannelInboundHandler<JoinGroupRequestPacket> {
+
+    public static final JoinGroupRequestHandler INSTANCE = new JoinGroupRequestHandler();
+
+    private JoinGroupRequestHandler() {}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, JoinGroupRequestPacket joinGroupRequestPacket) throws Exception {
