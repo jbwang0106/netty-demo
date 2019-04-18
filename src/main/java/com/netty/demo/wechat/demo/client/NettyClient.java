@@ -1,6 +1,10 @@
 package com.netty.demo.wechat.demo.client;
 
+import com.netty.demo.wechat.demo.client.console.ConsoleCommandManager;
+import com.netty.demo.wechat.demo.client.console.LoginCosoleCommand;
+import com.netty.demo.wechat.demo.client.handler.CreateGroupResponseHandler;
 import com.netty.demo.wechat.demo.client.handler.LoginResponseHandler;
+import com.netty.demo.wechat.demo.client.handler.LogoutResponseHandler;
 import com.netty.demo.wechat.demo.client.handler.MessageResponseHandler;
 import com.netty.demo.wechat.demo.codec.PacketDecoder;
 import com.netty.demo.wechat.demo.codec.PacketEncoder;
@@ -46,6 +50,8 @@ public class NettyClient {
                         ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new LogoutResponseHandler());
+                        ch.pipeline().addLast(new CreateGroupResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }
@@ -76,27 +82,17 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
+
         Scanner scanner = new Scanner(System.in);
-        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
+        ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
+        LoginCosoleCommand loginCosoleCommand = new LoginCosoleCommand();
+
         new Thread(() -> {
             while (!Thread.interrupted()) {
                 if (!SessionUtil.hasLogin(channel)) {
-                    System.out.println("输入用户名登录： ");
-
-                    String userName = scanner.nextLine();
-                    loginRequestPacket.setUsername(userName);
-                    loginRequestPacket.setPassword("pwd");
-
-                    channel.writeAndFlush(loginRequestPacket);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    loginCosoleCommand.exec(scanner, channel);
                 } else {
-                    String toUserId = scanner.nextLine();
-                    String message = scanner.nextLine();
-                    channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
+                    consoleCommandManager.exec(scanner, channel);
                 }
             }
         }).start();

@@ -3,6 +3,7 @@ package com.netty.demo.wechat.demo.server.handler;
 import com.netty.demo.wechat.demo.procotol.request.LoginRequestPacket;
 import com.netty.demo.wechat.demo.procotol.response.LoginResponsePacket;
 import com.netty.demo.wechat.demo.session.Session;
+import com.netty.demo.wechat.demo.util.IDUtil;
 import com.netty.demo.wechat.demo.util.SessionUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -22,7 +23,7 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
         if (valid(loginRequestPacket)) {
 
             loginResponsePacket.setSuccess(true);
-            String userId = randomUserId();
+            String userId = IDUtil.randomUserId();
             loginResponsePacket.setUserId(userId);
             System.out.println("[" + loginRequestPacket.getUsername() + "] 登录成功...");
             SessionUtil.bindSession(new Session(userId, loginRequestPacket.getUsername()), ctx.channel());
@@ -38,10 +39,6 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
 
     private boolean valid(LoginRequestPacket loginRequestPacket) {
         return true;
-    }
-
-    private static String randomUserId() {
-        return UUID.randomUUID().toString().split("-")[0];
     }
 
     @Override

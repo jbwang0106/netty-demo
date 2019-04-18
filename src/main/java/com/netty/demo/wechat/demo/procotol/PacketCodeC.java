@@ -1,9 +1,13 @@
 package com.netty.demo.wechat.demo.procotol;
 
 import com.netty.demo.wechat.demo.procotol.command.Command;
+import com.netty.demo.wechat.demo.procotol.request.CreateGroupRequestPacket;
 import com.netty.demo.wechat.demo.procotol.request.LoginRequestPacket;
+import com.netty.demo.wechat.demo.procotol.request.LogoutRequestPacket;
 import com.netty.demo.wechat.demo.procotol.request.MessageRequestPacket;
+import com.netty.demo.wechat.demo.procotol.response.CreateGroupResponsePacket;
 import com.netty.demo.wechat.demo.procotol.response.LoginResponsePacket;
+import com.netty.demo.wechat.demo.procotol.response.LogoutResponsePacket;
 import com.netty.demo.wechat.demo.procotol.response.MessageResponsePacket;
 import com.netty.demo.wechat.demo.procotol.serializer.Serializer;
 import io.netty.buffer.ByteBuf;
@@ -28,6 +32,10 @@ public class PacketCodeC {
         packetTypeMap.put(Command.LOGIN_RESPONSE, LoginResponsePacket.class);
         packetTypeMap.put(Command.MESSAGE_REQUEST, MessageRequestPacket.class);
         packetTypeMap.put(Command.MESSAGE_RESPONSE, MessageResponsePacket.class);
+        packetTypeMap.put(Command.CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
+        packetTypeMap.put(Command.CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
+        packetTypeMap.put(Command.LOGOUT_REQUEST, LogoutRequestPacket.class);
+        packetTypeMap.put(Command.LOGOUT_RESPONSE, LogoutResponsePacket.class);
 
         serializeMap = new HashMap<>();
         serializeMap.put(Serializer.JSON_SERIALIZER, Serializer.DEFAULT);
