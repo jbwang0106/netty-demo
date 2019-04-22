@@ -1,7 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1f3576a-277f-4ab6-aa0b-21e54fb47be3" name="Default" comment="" />
+    <list default="true" id="e05b1623-6f0f-4acf-926d-9d7815542b4e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/server/EchoServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netty/demo/server/EchoServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/transfer/NettyOioServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/attributes/Attributes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/bytebuf/ByteBufTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/client/NettyClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/client/handler/ClientHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/client/handler/FirstClientHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/Packet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/PacketCodeC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/command/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/request/LoginRequestPacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/request/MessageRequestPacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/response/LoginResponsePacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/response/MessageResponsePacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/serializer/Serializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/serializer/SerializerAlorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/serializer/impl/JSONSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/NettyServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/FirstServerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/ServerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/inbound/InBoundHandlerA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/inbound/InBoundHandlerB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/inbound/InBoundHandlerC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/outbound/OutBoundHandlerA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/outbound/OutBoundHandlerB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/outbound/OutBoundHandlerC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/util/LoginUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/server/EchoServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netty/demo/server/EchoServer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/server/EchoServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netty/demo/server/EchoServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/attributes/Attributes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/bytebuf/ByteBufTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/client/NettyClient$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/client/NettyClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/Packet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/PacketCodeC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/request/LoginRequestPacket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/request/MessageRequestPacket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/response/LoginResponsePacket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/response/MessageResponsePacket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/serializer/Serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/serializer/SerializerAlorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/procotol/serializer/impl/JSONSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/server/NettyServer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/server/NettyServer$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netty/demo/wechat/demo/server/NettyServer.class" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +62,33 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/server/EchoServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.30.Final/netty-all-4.1.30.Final-sources.jar!/io/netty/bootstrap/AbstractBootstrap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="292" column="16" lean-forward="true" selection-start-line="292" selection-start-column="16" selection-end-line="292" selection-end-column="16" />
+              <folding>
+                <element signature="e#8705#8706#0" expanded="true" />
+                <element signature="e#8765#8766#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,11 +102,11 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/netty/demo/server/EchoServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/FirstServerHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/client/FirstClientHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/bytebuf/ByteBufTest.java" />
@@ -62,6 +137,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/PacketDecoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/NettyServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/PacketCodeC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netty/demo/server/EchoServer.java" />
       </list>
     </option>
   </component>
@@ -69,18 +145,17 @@
     <option name="jreName" value="#JAVA_HOME" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -93,13 +168,47 @@
               <item name="netty-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="netty-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../flash-netty" />
@@ -126,7 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NettyClient">
+  <component name="RunManager" selected="Application.EchoServer">
     <configuration name="ByteBufTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.netty.demo.wechat.demo.bytebuf.ByteBufTest" />
       <module name="netty-demo" />
@@ -134,6 +243,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.netty.demo.wechat.demo.bytebuf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EchoServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.netty.demo.server.EchoServer" />
+      <module name="netty-demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netty.demo.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -193,6 +316,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EchoServer" />
         <item itemvalue="Application.NettyClient" />
         <item itemvalue="Application.NettyServer" />
         <item itemvalue="Application.ByteBufTest" />
@@ -221,12 +345,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33594000" />
+    <option name="totallyTimeSpent" value="35046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27412868" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26675603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -235,7 +360,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.18387553" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26308346" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28611898" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.29844412" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -246,7 +371,7 @@
       <window_info anchor="bottom" id="Statistic" order="10" />
       <window_info anchor="bottom" id="Run with VisualVM" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.21246459" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="14" />
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="16" weight="0.32936078" />
@@ -298,13 +423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/server/EchoServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/server/EchoServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -312,12 +430,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/package-info.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/package-info.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/package-info.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/package-info.java" />
     <entry file="jar://D:/soft/Java/jdk1.8.0_162/src.zip!/java/time/LocalDateTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
@@ -350,13 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/client/handler/FirstClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -508,16 +616,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/PacketDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/procotol/PacketDecoder.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/wechat/demo/server/handler/ServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -583,6 +682,27 @@
           <caret line="42" column="77" lean-forward="true" selection-start-line="42" selection-start-column="77" selection-end-line="42" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netty/demo/server/EchoServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.30.Final/netty-all-4.1.30.Final-sources.jar!/io/netty/bootstrap/AbstractBootstrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="292" column="16" lean-forward="true" selection-start-line="292" selection-start-column="16" selection-end-line="292" selection-end-column="16" />
+          <folding>
+            <element signature="e#8705#8706#0" expanded="true" />
+            <element signature="e#8765#8766#0" expanded="true" />
           </folding>
         </state>
       </provider>
